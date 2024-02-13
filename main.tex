@@ -19,6 +19,7 @@
 \usepackage[english]{babel}
 \usepackage{tabularx}
 \usepackage{calc} % added
+\usepackage{ragged2e}
 
 \input{glyphtounicode}
 
@@ -66,7 +67,10 @@
 % Custom commands
 \newcommand{\resumeItem}[1]{
   \item\small{
-    {#1 \vspace{-2pt}}
+    \begin{minipage}[t]{0.99\linewidth} % Adjust the width as needed
+      {#1}
+    \end{minipage}
+    \vspace{1pt} % Adjust the space between elements as needed
   }
 }
 
