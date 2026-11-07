@@ -1,237 +1,128 @@
-%-------------------------
-% Resume in Latex
-% Author : Jake Gutierrez
-% Based off of: https://github.com/sb2nov/resume
-% License : MIT
-%------------------------
+% Based on Jake Gutierrez's resume template (MIT)
+% https://github.com/sb2nov/resume
+\documentclass[a4paper,11pt]{article}
 
-\documentclass[letterpaper,11pt]{article}
-
-\usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
-\usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
-\usepackage{tabularx}
-\usepackage{calc} % added
-\usepackage{ragged2e}
-
 \input{glyphtounicode}
 
-
-%----------FONT OPTIONS----------
-% sans-serif
-% \usepackage[sfdefault]{FiraSans}
-% \usepackage[sfdefault]{roboto}
-% \usepackage[sfdefault]{noto-sans}
-% \usepackage[default]{sourcesanspro}
-
-% serif
-% \usepackage{CormorantGaramond}
-% \usepackage{charter}
-
-
+% Page layout
 \pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
-\fancyfoot{}
+\fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
-
-% Adjust margins
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
+\addtolength{\topmargin}{-0.5in}
 \addtolength{\textheight}{1.0in}
-
-\urlstyle{same}
-
-\raggedbottom
 \raggedright
+\raggedbottom
 \setlength{\tabcolsep}{0in}
-
-% Sections formatting
-\titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
-
-% Ensure that generate pdf is machine readable/ATS parsable
+\urlstyle{same}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\emergencystretch=1em
 \pdfgentounicode=1
 
-%-------------------------
-% Custom commands
-\newcommand{\resumeItem}[1]{
-  \item\small{
-    \begin{minipage}[t]{0.99\linewidth} % Adjust the width as needed
-      {#1}
-    \end{minipage}
-    \vspace{1pt} % Adjust the space between elements as needed
-  }
-}
+\titleformat{\section}{\vspace{-5pt}\scshape\raggedright\large}{}{0em}{}[\titlerule\vspace{-5pt}]
 
+% Resume helpers
 \newcommand{\resumeSubheading}[4]{
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
+      \textit{\small #3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-6pt}
 }
-
-\newcommand{\resumeSubSubheadingLeftOneRow}[2]{% % added
-\begin{description}[leftmargin=!,labelwidth=\widthof{\small\bfseries #1}]
-    \item[\small #1]{\textit{\small  #2}}
-\end{description}
-}
-
-\newcommand{\resumeSubSubheadingLeftTwoRows}[4]{%
-\begin{description}[leftmargin=!,labelwidth=\widthof{\small\bfseries #1}]
-    \item[\small #1]{\textit{\small  #2}}
-    \item[\small #3]{\textit{\small  #4}}
-\end{description}
-}
-
-\newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeProjectHeading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
-
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in,label={},itemsep=3pt,topsep=3pt]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
-
-%-------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.24in,label={\tiny$\bullet$},itemsep=3pt,topsep=3pt,parsep=0pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}}
+\newcommand{\resumeItem}[1]{\item{\small #1}}
 
 \begin{document}
 
-%----------HEADING----------
-% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
-%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
-% \end{tabular*}
-
+%---------- HEADING ----------
 \begin{center}
-    \textbf{\Huge \scshape Valerii Zhyla} \\ \vspace{1pt}
-    \small +49-1522-413-9431 $|$ \href{mailto:valeriizhyla@gmail.com}{\underline{valeriizhyla@gmail.com}} $|$ 
-    \href{https://linkedin.com/in/valerii-zhyla}{\underline{linkedin.com/in/valerii-zhyla}} $|$
-    \href{https://github.com/ValeriiZhyla}{\underline{github.com/ValeriiZhyla}}
+  \textbf{\Huge \scshape Valerii Zhyla} \\ \vspace{1pt}
+  \small +49-1522-413-9431 $|$
+  \href{mailto:valeriizhyla@gmail.com}{\underline{valeriizhyla@gmail.com}} $|$
+  \href{https://linkedin.com/in/valerii-zhyla}{\underline{linkedin.com/in/valerii-zhyla}} $|$
+  \href{https://github.com/ValeriiZhyla}{\underline{github.com/ValeriiZhyla}}
 \end{center}
 
+%---------- SUMMARY ----------
+\section{Summary}
+\small{Senior Software Engineer specializing in distributed systems and backend architecture for critical energy infrastructure. Combines hands-on delivery with cross-team technical leadership, modernizing legacy systems and turning customer-specific integrations into reusable product capabilities.}
 
-%-----------EXPERIENCE-----------
+%---------- EXPERIENCE ----------
 \section{Experience}
-  \resumeSubHeadingListStart
+\resumeSubHeadingListStart
 
 \resumeSubheading
-{Senior Software Engineer (Full-time)}{May 2024 -- Present}
-{Vivavis AG}{Remote, Germany}
+  {Senior Software Engineer (Full-time)}{May 2024 -- Present}
+  {VIVAVIS AG}{Remote, Germany}
 \resumeItemListStart
-\resumeItem{Owned the technical direction and delivery of a high-throughput, distributed data integration platform from concept to production, designed to process 1M+ events per minute using Spring Boot, NATS JetStream, and CloudNativePG}
-\resumeItem{Served as the primary technical point of contact for multiple teams adopting the platform, defining integration patterns, service boundaries, and rollout approaches across the organization}
-\resumeItem{Drove cross-team engineering practices through architecture reviews, mentoring, and technical guidance, improving consistency and delivery quality across several teams}
-\resumeItem{Redesigned core data access interfaces and platform abstractions, removing performance bottlenecks and enabling a 10x increase in data model scalability}
-\resumeItem{Led the rollout of secure service-to-service communication using mTLS, OAuth 2.0, and JWT, establishing end-to-end authentication and encryption standards across microservices}
+  \resumeItem{Drove the transition from bespoke B2B integrations to reusable product capabilities across an enterprise software portfolio, adopted by approximately 10 major customers and established as the standard for new integrations.}
+  \resumeItem{Owned the architecture and core implementation of a highly available energy data platform, modernizing legacy components with horizontally scalable services designed for sustained 1M+ events/min and recovery from component failures.}
+  \resumeItem{Launched a funded AI engineering initiative; now technically lead a cross-team group of engineers developing MCP integrations and automation for code review, onboarding, and integration testing, used by dozens of employees across Engineering, QA, and Product.}
+  \resumeItem{Initiated architectural improvements by identifying systemic bottlenecks, validating solutions through proofs of concept, and guiding engineering teams through implementation and operational handover.}
+  \resumeItem{Drove the shift from rigid, centrally managed abstractions to team-owned data models and service contracts, designing and implementing the initial solutions while preserving stable external interfaces.}
 \resumeItemListEnd
+\vspace{5pt}
 
 \resumeSubheading
-{Software Engineer (Part-time)}{Jul. 2021 -- May 2024}
-{Vivavis AG}{Remote, Germany}
+  {Software Engineer (Part-time)}{Jul 2021 -- May 2024}
+  {VIVAVIS AG}{Remote, Germany}
 \resumeItemListStart
-\resumeItem{Refactored microservices in a real-time energy control network, reducing p95 processing latency by 50\% and doubling peak traffic capacity}
-\resumeItem{Drove adoption of automated testing and TDD practices across 10+ Java projects, reducing bug rates by 50\% and shortening the QA cycle by 30\%}
-\resumeItem{Partnered with product and engineering stakeholders on 50+ features, translating business requirements into scalable technical designs and maintaining architectural consistency across services}
+  \resumeItem{Advocated for Spring Boot adoption over proprietary Java frameworks, reengineered legacy backend services, and analyzed existing architectures to support modernization.}
+  \resumeItem{Designed and deployed Kubernetes-based infrastructure and highly available applications to meet strict availability SLAs.}
+  \resumeItem{Translated regulatory and business requirements into technical specifications, collaborating with stakeholders on interface design and implementation.}
 \resumeItemListEnd
-      
+\vspace{5pt}
 
 \resumeSubheading
-{Working Student Software Engineer (Part-time)}{Mar. 2018 -- Jul. 2021}
-{IDS GmbH}{Ettlingen, Germany}
+  {Working Student Software Engineer (Part-time)}{Mar 2018 -- Jul 2021}
+  {IDS GmbH}{Ettlingen, Germany}
 \resumeItemListStart
-\resumeItem{Contributed to the refactoring of a business-critical system with 200k+ LOC, tripling average transaction throughput and reducing failure rates by 60\%}
-\resumeItem{Optimized PostgreSQL and Oracle databases across 10+ backend services, increasing load-handling capacity by up to 4x without additional infrastructure}
-\resumeItem{Developed full-stack applications, delivering backend services, database integrations, and user-facing features across multiple internal tools}
+  \resumeItem{Designed, developed, and maintained full-stack enterprise applications, including backend services, database integrations, and user interfaces.}
+  \resumeItem{Designed and maintained PostgreSQL and Oracle database schemas, queries, and integrations, while automating operational workflows.}
 \resumeItemListEnd
 
 \resumeSubHeadingListEnd
 
-
-% %-----------PROJECTS-----------
-% \section{Projects}
-%     \resumeSubHeadingListStart
-%       \resumeProjectHeading
-%           {\textbf{Gitlytics} $|$ \emph{Python, Flask, React, PostgreSQL, Docker}}{June 2020 -- Present}
-%           \resumeItemListStart
-%             \resumeItem{Developed a full-stack web application using with Flask serving a REST API with React as the frontend}
-%             \resumeItem{Implemented GitHub OAuth to get data from user’s repositories}
-%             \resumeItem{Visualized GitHub data to show collaboration}
-%             \resumeItem{Used Celery and Redis for asynchronous tasks}
-%           \resumeItemListEnd
-%       \resumeProjectHeading
-%           {\textbf{Simple Paintball} $|$ \emph{Spigot API, Java, Maven, TravisCI, Git}}{May 2018 -- May 2020}
-%           \resumeItemListStart
-%             \resumeItem{Developed a Minecraft server plugin to entertain kids during free time for a previous job}
-%             \resumeItem{Published plugin to websites gaining 2K+ downloads and an average 4.5/5-star review}
-%             \resumeItem{Implemented continuous delivery using TravisCI to build the plugin upon new a release}
-%             \resumeItem{Collaborated with Minecraft server administrators to suggest features and get feedback about the plugin}
-%           \resumeItemListEnd
-%     \resumeSubHeadingListEnd
-
-%-----------EDUCATION-----------
+%---------- EDUCATION ----------
 \section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Karlsruhe Institute of Technology}{Apr. 2022 -- May 2024}
-      {Master of Science in Computer Science}{Karlsruhe, Germany}
-    \resumeSubheading
-      {Karlsruhe Institute of Technology}{Oct. 2017 -- Mar. 2022}
-      {Bachelor of Science in Computer Science}{Karlsruhe, Germany}
-  \resumeSubHeadingListEnd
+\begin{itemize}[leftmargin=0.15in,label={},topsep=3pt]
+\item
+\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+  \textbf{Karlsruhe Institute of Technology} & Karlsruhe, Germany \\
+  \textit{\small M.Sc. Computer Science} & \textit{\small Apr 2022 -- May 2024} \\
+  \textit{\small B.Sc. Computer Science} & \textit{\small Oct 2017 -- Mar 2022} \\
+\end{tabular*}
+\end{itemize}
 
-%
-%-----------PROGRAMMING SKILLS-----------
+%---------- TECHNICAL SKILLS ----------
 \section{Technical Skills}
-\begin{itemize}[leftmargin=0.15in, label={}]
+\begin{itemize}[leftmargin=0.15in,label={},topsep=3pt]
 \small{\item{
-\textbf{Programming Languages}{: Java, Python, SQL, TypeScript} \\
-\textbf{Backend}{: Spring Boot, FastAPI, SQLAlchemy, Pydantic, REST, gRPC} \\
-\textbf{Distributed Systems}{: Event-Driven Architecture, Microservices, NATS, Apache Kafka} \\
-\textbf{Data \& Storage}{: PostgreSQL, Redis, CloudNativePG} \\
-\textbf{Cloud, Platform \& Observability}{: AWS, Kubernetes, Docker, Terraform, GitLab CI/CD, Prometheus, Grafana} \\
-\textbf{Security}{: mTLS, OAuth 2.0, JWT} \\
-\textbf{Testing \& Quality}{: JUnit, Mockito, TDD, Playwright} \\
-\textbf{Engineering Productivity}{: MCP, AI-assisted engineering workflows, coding agents} \\
-\textbf{Frontend}{: React, Next.js} \\
+  \textbf{Languages:} Java, Python, SQL \\
+  \textbf{Backend:} Spring Boot, FastAPI \\
+  \textbf{Distributed Systems:} NATS JetStream, Apache Kafka, Event-Driven Architecture \\
+  \textbf{Data \& Storage:} PostgreSQL, Redis, CloudNativePG \\
+  \textbf{Infrastructure:} Kubernetes, Helm, Docker
 }}
 \end{itemize}
 
-
-%-----------LANGUAGES-----------
+%---------- LANGUAGES ----------
 \section{Languages}
-\begin{itemize}[leftmargin=0.15in, label={}]
-\small{\item{
-{ English (C1), German (C1), Ukrainian (Native), Russian (Native)}
-}}
+\begin{itemize}[leftmargin=0.15in,label={},topsep=3pt]
+\small{\item{English (C1), German (C1), Ukrainian (Native), Russian (Native)}}
 \end{itemize}
 
-%-------------------------------------------
 \end{document}
